@@ -1,0 +1,166 @@
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Orbitron', sans-serif;
+            background-color: #0c0c1d;
+            color: #ffffff;
+            overflow: hidden;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+        }
+        header {
+            text-align: center;
+            padding: 20px 0;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px #00ffff;
+        }
+        .game-container {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            margin: 0 auto;
+            background-color: #000033;
+            border: 2px solid #00ffff;
+            box-shadow: 0 0 20px #00ffff;
+            overflow: hidden;
+        }
+        #gameCanvas {
+            width: 100%;
+            height: 100%;
+        }
+        .btn {
+            background-color: #00ffff;
+            color: #000033;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 10px;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #ffffff;
+            box-shadow: 0 0 10px #ffffff;
+        }
+        #levelTransition {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 3em;
+            color: #00ffff;
+            text-align: center;
+            display: none;
+        }
+        #gameOver, #introScreen, #customizationScreen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        #gameOver h2, #introScreen h2, #customizationScreen h2 {
+            font-size: 2.5em;
+            color: #00ffff;
+            margin-bottom: 20px;
+        }
+        #gameOver p, #introScreen p, #customizationScreen p {
+            font-size: 1.2em;
+            color: #ffffff;
+            max-width: 600px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        .customization-options {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
+        .customization-option {
+            background-color: rgba(0, 255, 255, 0.1);
+            border: 1px solid #00ffff;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px;
+            width: calc(33.33% - 20px);
+            box-sizing: border-box;
+        }
+        .customization-option label {
+            display: block;
+            margin-bottom: 10px;
+            color: #00ffff;
+            font-size: 1.2em;
+        }
+        .customization-option select {
+            width: 100%;
+            padding: 5px 10px;
+            font-size: 1em;
+            background-color: #000033;
+            color: #00ffff;
+            border: 1px solid #00ffff;
+            cursor: pointer;
+        }
+        .floating-icon {
+            position: absolute;
+            font-size: 1.5em;
+            color: rgba(255, 255, 255, 0.3);
+            pointer-events: none;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        #muteBtn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            color: #00ffff;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            .game-container {
+                padding-bottom: 133.33%; /* 3:4 aspect ratio for mobile */
+            }
+            .customization-option {
+                width: calc(50% - 20px);
+            }
+            #gameOver h2, #introScreen h2, #customizationScreen h2 {
+                font-size: 2em;
+            }
+            #gameOver p, #introScreen p, #customizationScreen p {
+                font-size: 1em;
+            }
+            .btn {
+                font-size: 0.9em;
+                padding: 8px 16px;
+            }
+        }

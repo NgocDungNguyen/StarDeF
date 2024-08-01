@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Defender</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="animate__animated animate__pulse animate__infinite">Cosmic Defender</h1>
+        </header>
+        <div class="game-container">
+            <canvas id="gameCanvas"></canvas>
+            <div id="levelTransition"></div>
+            <div id="introScreen">
+                <h2 class="animate__animated animate__fadeInDown">Welcome to Cosmic Defender</h2>
+                <p class="animate__animated animate__fadeIn animate__delay-1s">Defend the galaxy from invading enemy jets and asteroids! Navigate through 10 increasingly challenging levels, face powerful bosses, and become the ultimate cosmic defender.</p>
+                <p class="animate__animated animate__fadeIn animate__delay-2s">Use arrow keys to move, spacebar to shoot. Collect power-ups to enhance your firepower!</p>
+                <button class="btn animate__animated animate__bounceIn animate__delay-3s" id="startCustomizationBtn">Start Mission</button>
+            </div>
+            <div id="customizationScreen" style="display: none;">
+                <h2 class="animate__animated animate__fadeInDown">Customize Your Jet</h2>
+                <div class="customization-options animate__animated animate__fadeIn animate__delay-1s">
+                    <div class="customization-option">
+                        <label for="jetColor">Jet Color</label>
+                        <select id="jetColor">
+                            <option value="#00ffff">Blue</option>
+                            <option value="#ff0000">Red</option>
+                            <option value="#00ff00">Green</option>
+                        </select>
+                    </div>
+                    <div class="customization-option">
+                        <label for="jetType">Jet Type</label>
+                        <select id="jetType">
+                            <option value="fighter">Fighter Jet</option>
+                            <option value="bomber">Bomber</option>
+                            <option value="stealth">Stealth Jet</option>
+                        </select>
+                    </div>
+                    <div class="customization-option">
+                        <label for="bulletType">Weapon Type</label>
+                        <select id="bulletType">
+                            <option value="single">Single Bullet</option>
+                            <option value="auto">Auto Machine Gun</option>
+                            <option value="laser">Laser</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="btn animate__animated animate__bounceIn animate__delay-2s" id="startBattleBtn">Launch Battle</button>
+            </div>
+            <div id="gameOver" style="display: none;">
+                <h2 class="animate__animated animate__fadeInDown">Game Over</h2>
+                <p class="animate__animated animate__fadeIn animate__delay-1s">Your Score: <span id="finalScore"></span></p>
+                <button class="btn animate__animated animate__bounceIn animate__delay-2s" id="restartBtn">Restart Mission</button>
+                <button class="btn animate__animated animate__bounceIn animate__delay-2s" id="menuBtn">Back to Menu</button>
+            </div>
+        </div>
+        <button id="muteBtn"><i class="fas fa-volume-up"></i></button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
